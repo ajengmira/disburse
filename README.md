@@ -10,11 +10,11 @@ A simple disburse service.
 5. For migrate db, execute 
 php migration.php
 6. To post data : 
-php disburse_post.php [bank_code] [account_number] [amount] [remark]
-example : 
-php disburse_post.php bni 1234567890 10000 sample
+* php disburse_post.php [bank_code] [account_number] [amount] [remark]
+* example : 
+* php disburse_post.php bni 1234567890 10000 sample
 7. To update data :
-php disburse_update.php [transaction_id]
-example :
-php disburse_update.php 2147483647
+* php disburse_update.php [transaction_id]
+* example :
+* php disburse_update.php 2147483647
 ```
