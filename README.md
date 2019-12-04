@@ -12,7 +12,7 @@ php migration.php
 6. To post data : 
 * php disburse_post.php [bank_code] [account_number] [amount] [remark]
 * example : 
-* php disburse_post.php bni 1234567890 10000 sample
+* php disburse_post.php bni 1234567890 10000 sample%20remark
 7. To update data :
 * php disburse_update.php [transaction_id]
 * example :
