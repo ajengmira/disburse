@@ -1,16 +1,9 @@
 <?php
 
 function create_db(){
-	$host="localhost"; 
+	include("config.php");
 
-	$root="root"; 
-	$root_password=""; 
-
-	$user='root';
-	$pass='';
-	$db="flip"; 
-
-   	$dbh = new PDO("mysql:host=$host", $root, $root_password);
+   	$dbh = new PDO("mysql:host=$host", $user, $pass);
 
    	$dbh->exec("DROP DATABASE IF EXISTS " . $db);
 
@@ -25,6 +18,8 @@ function create_db(){
 }
 
 function create_table(){
+	include("config.php");
+
 	$table = "disburse";
 
 	$db = new PDO("mysql:dbname=flip;host=localhost", "root", "" );

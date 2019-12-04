@@ -2,7 +2,8 @@
 
 function update(){
 
-	//$transaction_id = 2147483647;
+	include("config.php");
+
 	$transaction_id = $_SERVER['argv'];
 
 	$curl = curl_init();
@@ -20,7 +21,7 @@ function update(){
 	  CURLOPT_HTTPHEADER => array(
 	    "Accept: */*",
 	    "Accept-Encoding: gzip, deflate",
-	    "Authorization: Basic SHl6aW9ZN0xQNlpvTzduVFlLYkc4TzRJU2t5V25YMUp2QUVWQWh0V0tadW1vb0N6cXA0MTo=",
+	    "Authorization: Basic ".$token,
 	    "Cache-Control: no-cache",
 	    "Connection: keep-alive",
 	    "Content-Type: application/x-www-form-urlencoded",
@@ -38,7 +39,7 @@ function update(){
 	} else {
 		$result = json_decode($response);
 		
-		$pdo = new PDO("mysql:dbname=flip;host=localhost", "root", "" );
+		$pdo = new PDO("mysql:dbname=$db;host=$host", "$user", "$pass" );
 		
 		$sql = "UPDATE disburse SET status=?, receipt=?, time_served=? WHERE id=?";
 		$update = $pdo->prepare($sql)->execute([$result->status, $result->receipt, $result->time_served, $result->id]);
