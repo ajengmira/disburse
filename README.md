@@ -14,11 +14,11 @@ A simple disburse service.
 ## Execution via terminal
 1. To post data : 
 	> php controllers/DisburseCreate.php [bank_code] [account_number] [amount] [remark]
-	Example 
+	* Example 
 	> php controllers/DisburseCreate.php bni 1234567890 10000 sample%20remark
 2. To update data :
 	> php controllers/DisburseUpdate.php [transaction_id]
-	Example :
+	* Example :
 	> php controllers/DisburseUpdate.php 2147483647
 
 ## Execution via browser or Postman
