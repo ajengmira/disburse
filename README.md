@@ -11,21 +11,21 @@ A simple disburse service.
 6. For migrate db, execute 
 	php migration.php
 
-## Execute via terminal
+## Execution via terminal
 1. To post data : 
 	> php controllers/DisburseCreate.php [bank_code] [account_number] [amount] [remark]
-	* example 
+	Example 
 	> php controllers/DisburseCreate.php bni 1234567890 10000 sample%20remark
 2. To update data :
 	> php controllers/DisburseUpdate.php [transaction_id]
-	* example :
+	Example :
 	> php controllers/DisburseUpdate.php 2147483647
 
-## Execute via browser or Postman
+## Execution via browser or Postman
 1. Get List : 
 	http://localhost/disburse/?flip=list
 2. Create Transaction :	
-	http://localhost/disburse/?flip=create&bank_code=bni&account_number=1234567890&amount=10000&remark=sample remark
+	http://localhost/disburse/?flip=create&bank_code=bni&account_number=1234567890&amount=10000&remark=sample%20remark
 3. Update Transaction :	
 	http://localhost/disburse/?flip=update&transaction_id=262136255
 ```
